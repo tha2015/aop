@@ -40,7 +40,7 @@ public class ProxyObjectMethodImpl implements MethodInterceptor {
     }
 
     private String[] resolveParamNames(Object proxy, Method method, Object[] args, String interceptionAnnotationData) {
-        String[] names = new String[method.getParameterCount()];
+        String[] names = new String[method.getParameterTypes().length];
         for (int i = 0; i < names.length; i++) {
             MethodParameter methodParam = new MethodParameter(method, i);
             Param paramAnno = methodParam.getParameterAnnotation(Param.class);
